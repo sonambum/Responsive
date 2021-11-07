@@ -1,0 +1,804 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+nav.navbar-custom {
+    background-image: linear-gradient(to right,white, rgb(21,59,81), rgb(2,27,46));
+    height: 120px;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #042331;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar h3 span{
+    color: red;
+    font-size: 50px;
+}
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #042331;
+
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    Header STYLE
+----------------------------------------------------- */
+.headimg{
+    width: 70vw;
+}
+
+.headimg .dhi{
+position: absolute;
+left: 125px;
+bottom: 30px;
+}
+
+.headimg .dhi img{
+    width: 64px;
+    height: 60px;
+}
+.headimg .desung{
+    position: absolute;
+    left: 750px;
+    bottom: 20px;
+}
+.headimg .gyelsung{
+    color: white;
+    position: relative;
+    left: 300px;
+    bottom: 20px;
+}
+.gyelsung h2{
+    position: absolutes;
+}
+.gyelsung span{
+    position: absolute;
+}
+
+#zone{
+    font-size: 30px;
+}
+/* ---------------------------------------------------
+    Top Card STYLE
+----------------------------------------------------- */
+.card{
+
+    width: 355px;
+    grid-template-rows: 130px 100px;
+    grid-template-areas: "text" "stats"; 
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .cardright{
+    width: 350px;
+    grid-template-rows: 130px 100px;
+    grid-template-areas: "text" "stats"; 
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    padding: 10px;
+  }
+  .card2{
+    display: grid;
+    width: 355px;
+    grid-template-columns: 300px;
+    grid-template-rows: 130px 100px;
+
+    grid-template-areas: "text" "stats";
+    
+    border-radius: 10px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+  }
+  .card3{
+    width: 800px;
+    height: 500px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    margin-left: 100px;
+    position: relative;
+  }
+  .cardlogin{
+    width: 350px;
+    height: 350px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 150px;
+    position: relative;
+  }
+  .cardreg{
+    width: 350px;
+    height: 500px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 50px;
+    position: relative;
+  }
+  
+  .card-stats {
+    grid-area: stats; 
+  }
+  .cardright-stats{
+      grid-area: stats;
+  }
+
+  .card-text {
+    grid-area: text;
+  }
+  .cardright-text{
+      grid-area: text;
+  }
+
+  .card-text h2 {
+    margin-top:0px;
+    font-size:28px;
+  }
+  .cardright-text h2 {
+    margin-top:0px;
+    font-size:28px;
+  }
+  
+  .card-stats {
+    grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #524E4D;
+  }
+  .cardright-stats {
+    grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #524E4D;
+  }
+  .card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding:18px;
+  }
+  .cardright-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding:18px;
+  }
+ 
+  .card-stats .stat .type #textbox{
+      width: 100px;
+      font-size: 30px;
+      border-radius: 10px;
+      text-align: center;
+  }
+  .card-stats .stat .type #textbox1{
+    width: 100px;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.cardright-stats .stat .type #textbox1{
+    width: 100px;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+  .cardright-text p {
+    color: grey;
+    font-size:15px;
+    font-weight: 300;
+  }
+  .card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  .cardright:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  .card {
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 30px 30px 30px 100px;
+  }
+  .cardright {
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 30px 30px 30px 100px;
+  }
+  .card2:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  .card2 {
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin-left: 100px;
+  }
+
+/*-----------------------------------------
+
+3D ON off Button
+-------------------------------------------*/
+.cards2 .card2 input[type="checkbox"]{
+    height: 100px;
+    width: 100px;
+    -webkit-appearance: none;
+    box-shadow: 
+                -10px -10px 15px rgba(138, 90, 90, 0.5),
+                10px 10px 15px rgba(70,70,70,0.12);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    outline: none;
+    margin-top: 120px;
+    margin-left: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+input[type="checkbox"]::after{
+    font-family: FontAwesome;
+    content: '\f011';
+    color: red;
+    font-size: 60px;
+    
+}
+input[type="checkbox"]:checked{
+    box-shadow: 
+    -10px -10px 15px rgba(138, 90, 90, 0.5),
+    10px 10px 15px rgba(70,70,70,0.12),
+    inset -20px -20px 15px rgba(138, 90, 90, 0.5),
+    inset 10px 10px 15px rgba(70,70,70,0.12);
+}
+
+input[type="checkbox"]:checked::after{
+    color: #15e38a;
+}
+
+.card2 h3{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.card2 #status{
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+.card2 .radio{
+    display: block;
+}
+/*-------------------------------------------------
+Indiactor styling alarm
+
+---------------------------------------------------*/
+
+.cir{
+    position: absolute;
+    background-color: green;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    top: 255px;
+    left: 202px;
+}
+.cir1{
+    position: absolute;
+    background-color: green;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 233px;
+    left: 281px;
+}
+.cir2{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 110px;
+    left: 609px;
+}
+.cir3{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 153px;
+    left: 609px;
+}
+.cir4{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 201px;
+    left: 609px;
+}
+.cir5{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 247px;
+    left: 609px;
+}
+.cir6{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 280px;
+    left: 609px;
+}
+.cir7{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 322px;
+    left: 609px;
+}
+.cir8{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 370px;
+    left: 609px;
+}
+.cir9{
+    position: absolute;
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: 417px;
+    left: 609px;
+}
+.Cardalarm img{
+
+    height: 350px;
+    width: 500px;
+    margin-top: 45px;
+}
+.cr{
+    position: absolute;
+    left: 350px;
+    bottom: 78px;
+}
+
+.loadbar{
+    position: relative;
+    width: 82px;
+    height: 257px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.bar{
+    position: absolute;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    background-color:skyblue;
+    color: #fff;
+    bottom: 0;
+}
+.bar{
+    font-size: 20px;
+}
+/*---------------------------------------------------
+   SideBar contact us
+-----------------------------------------------------*/
+
+.contacts h3{
+    font-size: 1.125rem;
+    font-weight: 50%;
+    padding: 10px 20px;
+}
+.contact{
+    line-height: 40px;
+    margin: 15px;
+}
+.contact span{
+    margin: 10px;
+}
+
+.contact span:hover{
+    padding: 10px;
+    transition: 0.5ms;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+/* @media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+
+} */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+    /* NAVBAR */
+    
+    p {
+        font-size: 0.9em;
+        line-height: 5%;
+    }
+    
+    .line {
+        width: 50%;
+        height: 1px;
+        margin: 40px 0;
+    }
+    nav.navbar-custom {
+        height: 100px;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .navbar {
+        height: auto;
+        width: 80%;
+    }
+
+    /* SLIDEBAR */
+
+    #sidebar {
+        min-width: 150px;
+        max-width: 150px;
+    }
+    #sidebar h3 span{
+        font-size: 30px;
+    }
+
+    #sidebar ul li a {
+        font-size: 0.9em;
+    }
+
+    ul ul a {
+        font-size: 0.1em !important;
+    }
+
+    ul.CTAs a {
+        text-align: none;
+        font-size: 0.1em !important;
+    }
+    .text {
+        font-size: 13px;
+    }
+
+    /* CONTENT */
+    #content {
+        width: 76%;
+        min-height: 40vh;
+    }
+
+    /* HEADER */
+    .headimg{
+        width: 77vw;
+    }
+    
+    .headimg .dhi{
+        left: 70px;
+        bottom: 30px;
+    }
+    .headimg .dhi img{
+        width: 40px;
+        height: 30px;
+    }
+    .headimg .desung{
+        left: 310px;
+        bottom: 30px;
+    }
+    .headimg .desung img{
+        width: 100px;
+        height: 50px;
+        }
+
+    .headimg .gyelsung{
+        left: 130px;
+        bottom: 30px;
+        font-size: 13px;
+    }
+    .headimg h2{
+        font-size: 17px;
+    }
+
+/* 3D ON BUTTON */
+.cards2 .card2 input[type="checkbox"]{
+    height: 100px;
+    width: 100px;
+    margin-left: 170px;
+}
+input[type="checkbox"]::after{
+    font-size: 60px;
+}
+.card2 h3{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.card2 #status{
+    margin-top: 50px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+/*--Indiactor styling alarm--*/
+
+.cir{
+    top: 190px;
+    left: 65px;
+}
+.cir1{
+    top: 189px;
+    left: 120px;
+}
+.cir2{
+    top: 97px;
+    left: 350px;
+}
+.cir3{
+    top: 125px;
+    left: 350px;
+}
+.cir4{
+    top: 155px;
+    left: 350px;
+}
+.cir5{
+    top: 185px;
+    left: 350px;
+}
+.cir6{
+    top: 205px;
+    left: 350px;
+}
+.cir7{
+    top: 233px;
+    left: 350px;
+}
+.cir8{
+    top: 263px;
+    left: 350px;
+}
+.cir9{
+    top: 293px;
+    left: 350px;
+}
+
+.Cardalarm img{
+    height: 220px;
+    width: 350px;
+    margin-top: 45px;
+}
+
+.loadbar{
+    margin-left: -300px;
+    margin-bottom: 19px;
+    width: 62px;
+    height: 168px;
+}
+
+.bar{
+    font-size: 20px;
+}
+
+.card3{
+    width: 410px;
+    height: 400px;
+    margin-left: 5px;
+  }
+
+
+/* LOGIN SECTION */
+.cardreg{
+    margin-left: 18px;
+}
+.cardlogin{
+    width: 300px;
+    height: 300px;
+    margin-left: 70px;
+  }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    {{!-- <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script> --}}
+    <script src="/index.js"></script>
+    
+  <!--Link for button-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="card.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <title>Home</title>
+</head>
+<body>
+  <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><span>S</span>emjong Water Project</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Welcome</p>
+
+                <li class="active"><a href="/">Home</a></li>
+                {{#if user}}
+                <li><a href="http://google.com">Water Scheduling</a></li>
+                <li>
+                    <a href="/about">About Us</a>
+                </li>
+                <li>
+                    <a href="/alarm">Alarm & Events</a>
+                </li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
+            <div class="contacts">
+                <h3>Contact Details:</h3>
+                <div class="contact">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Semjong,Tsirang</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone"></span>
+                        <span class="text">+97517276676</span>
+                    </div> <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">abc@email.com</span>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-custom">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <!-- <span>Dash</span> -->
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="headimg">
+                        <div class="desung">
+                            <img src="/logo.png">
+                        </div>
+                        <div class="dhi">
+                            <img src="/DHI.png">
+                        </div>
+                        <div class="gyelsung">
+                            <h2>Gyalsung Infra</h2>
+                            <span>The National Service</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-text">
+                      <h2>Water Flow</h2>
+                      <select id="zoneselect" onchange="getselectedvalue();">
+                          <option value="0">Choose One</option>
+                          <option value="1">Zone 1</option>
+                          <option value="2">Zone 2</option>
+                          <option value="3">Zone 3</option>
+                          <option value="4">Zone 4</option>
+                          <option value="5">Zone 5</option>
+                          <option value="6">Zone 6</option>
+                          <option value="7">Zone 7</option>
+                          <option value="8">Zone 8</option>
+                      </select>
+                      <br/>
+                      <label id="zones"></label>
+                    </div>
+                    <div class="card-stats">
+                      <div class="stat">
+                        <div class="value">Flow Rate(M<sup>3</sup>/<sub>hr</sub>)</div>
+                        <div class="type">
+                            <input id="textbox" type="text">
+                        </div>
+                      </div>
+                      <div class="stat border">
+                        <div class="value">Total Flow(M<sup>3</sup>)</div>
+                        <div class="type">
+                            <input id="textbox1" type="text">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="cardright">
+                    <div class="cardright-text">
+                        <h2>Water Level</h2>
+                        <p>Total level</p>
+                        <p>of source tank</p>
+                    </div>
+                    <div class="cardright-stats">
+                      <div class="stat">
+                        <div class="value">Level in CM</div>
+                        <div class="type">
+                            <input id="textbox1" type="text">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards2">
+                {{#if user}}
+                <div class="card2">
+                    <center>
+                        <input type="checkbox" name="cbox" id="cbox" onchange="onCbChange('cbox')" >
+                        <h3>Valve Control</h3>
+                    </center>
+                   <label id="status"></label>
+
+                </div>
+                <div class="card2">
+                    <center>
+                        <h3>Alarm</h3>
+                        <h4>Sensor Status:</h4>
+                        <div class="radio">
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Critical</label>
+                            <br/>
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Ok</label>
+                            <br/>
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Normal</label>
+                        </div>
+                    </center>
+                </div>
+                {{else}}
+                <div class="card2">
+                    <center>
+                        <h3>Alarm</h3>
+                        <h4>Sensor Status:</h4>
+                        <div class="radio">
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Critical</label>
+                            <br/>
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Ok</label>
+                            <br/>
+                            <input type="radio" id="critical" name="critical" value="critical"
+                                   checked>
+                            <label for="critical">Normal</label>
+                        </div>
+                    </center>
+                </div>
+                </div>
+
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="350" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=patshaling%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe><a href="https://putlocker-is.org"></a>
+                        <br>
+                        <style>.mapouter{position:absolute;left:900px;text-align:right;height:350px;width:350px;}</style><a href="https://www.embedgooglemap.net">google map code embed</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:451px;width:359px;}</style></div></div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{!-- </div> --}}
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    {{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
